@@ -23,23 +23,24 @@
 
 ---
 
-## Mapa stránek
-Home (Hlavní stránka)
-│
-├── O nás
-├── Služby
-│   ├── Osobní trénink
-│   ├── Skupinové lekce
-│   └── Výživové poradenství
-├── Ceník
-├── Lektoři
-├── Galerie
-├── Blog
-│   ├── Článek 1 – Jak začít s posilováním
-│   ├── Článek 2 – Nejlepší cviky na záda
-│   ├── Článek 3 – Správná výživa pro růst svalů
-│   └── Článek 4 – Jak sestavit tréninkový plán
-└── Kontakt
+
+## 🗺️ Mapa stránek
+
+- 🏠 **Home** (Hlavní stránka)
+  - ℹ️ O nás
+  - 🏋️ Služby
+    - Osobní trénink
+    - Skupinové lekce
+    - Výživové poradenství
+  - 💰 Ceník
+  - 👤 Lektoři
+  - 🖼️ Galerie
+  - 📝 Blog
+    - Článek 1 – Jak začít s posilováním
+    - Článek 2 – Nejlepší cviky na záda
+    - Článek 3 – Správná výživa pro růst svalů
+    - Článek 4 – Jak sestavit tréninkový plán
+  - 📞 Kontakt
 
 
 > **Celkový počet podstránek: 13** ✅
