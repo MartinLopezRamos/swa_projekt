@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="cs">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#ff5f00",
+                        "secondary": "#c8c6c5",
+                        "surface-container-low": "#1a1c1c",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#370e00",
+                        "on-error": "#690005",
+                        "tertiary": "#c8c6c5",
+                        "primary": "#ffb599",
+                        "outline-variant": "#5b4137",
+                        "on-background": "#e2e2e2",
+                        "on-primary-container": "#531a00",
+                        "surface-container-highest": "#333535",
+                        "on-secondary": "#313030",
+                        "primary-fixed": "#ffdbce",
+                        "on-secondary-fixed-variant": "#474746",
+                        "background": "#121414",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-error-container": "#ffdad6",
+                        "on-primary": "#5a1c00",
+                        "on-tertiary": "#303030",
+                        "surface-container-high": "#282a2b",
+                        "secondary-container": "#474746",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-container-lowest": "#0c0f0f",
+                        "surface-tint": "#ffb599",
+                        "inverse-on-surface": "#2f3131",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#e4bfb1",
+                        "on-tertiary-container": "#2c2c2c",
+                        "primary-fixed-dim": "#ffb599",
+                        "on-secondary-container": "#b7b5b4",
+                        "outline": "#ab8a7d",
+                        "inverse-surface": "#e2e2e2",
+                        "on-primary-fixed-variant": "#7f2b00",
+                        "inverse-primary": "#a63b00",
+                        "tertiary-container": "#959393",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface": "#121414",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-dim": "#121414",
+                        "on-surface": "#e2e2e2",
+                        "surface-bright": "#37393a",
+                        "surface-container": "#1e2020",
+                        "surface-variant": "#333535",
+                        "tertiary-fixed": "#e4e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xxl": "64px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "container-margin": "20px",
+                        "md": "16px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "xl": "40px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Space Grotesk"],
+                        "button-text": ["Space Grotesk"],
+                        "label-bold": ["Lexend"],
+                        "headline-lg": ["Space Grotesk"],
+                        "body-md": ["Lexend"],
+                        "body-lg": ["Lexend"],
+                        "display-xl": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "button-text": ["16px", { "lineHeight": "1", "fontWeight": "700" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .skew-btn {
+            transform: skewX(-5deg);
+        }
+
+        .skew-btn-inner {
+            transform: skewX(5deg);
+        }
+
+        .diagonal-stripes {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0, 0, 0, 0.1) 10px, rgba(0, 0, 0, 0.1) 20px);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+    
+        
+    <nav class="fixed top-0 w-full bg-neutral-950/90 backdrop-blur-xl border-b border-neutral-800 z-[100]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-black italic text-orange-600 tracking-widest font-space-grotesk uppercase">GYMPRO</a>
+                </div>
+                <div class="hidden lg:flex gap-8 items-center">
+                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="index.html">Home</a>
+                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="onas.html">O nás</a>
+                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="sluzby.html">Služby</a>
+                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="cenik.html">Ceník</a>
+                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="lektori.html">Lektoři</a>
+                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="galerie.html">Galerie</a>
+                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="blog.html">Blog</a>
+                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="kontakt.html">Kontakt</a>
+                </div>
+                <div class="hidden lg:block">
+                    <a href="kontakt.html" class="bg-orange-600 text-black px-6 py-2 font-bold uppercase skew-fix transition-transform hover:scale-105 active:scale-95 font-space-grotesk inline-block">
+                        <span class="inline-block transform skew-x-[5deg]">VSTOUPIT</span>
+                    </a>
+                </div>
+                <div class="lg:hidden flex items-center gap-4">
+                    <a href="kontakt.html" class="bg-orange-600 text-black px-4 py-2 text-sm font-bold uppercase skew-fix font-space-grotesk">
+                        <span class="inline-block transform skew-x-[5deg]">VSTOUPIT</span>
+                    </a>
+                    <button id="mobile-menu-button" class="text-white p-2">
+                        <span class="material-symbols-outlined text-3xl">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-neutral-950 border-b border-neutral-800">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="index.html">Home</a>
+                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="onas.html">O nás</a>
+                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="sluzby.html">Služby</a>
+                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="cenik.html">Ceník</a>
+                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="lektori.html">Lektoři</a>
+                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="galerie.html">Galerie</a>
+                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="blog.html">Blog</a>
+                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="kontakt.html">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            const icon = this.querySelector('.material-symbols-outlined');
+            icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
+        });
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link, #mobile-menu a').forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('text-orange-600');
+                link.classList.remove('text-neutral-400');
+                if (link.classList.contains('nav-link')) {
+                    link.classList.add('border-b-2', 'border-orange-600', 'pb-1');
+                }
+            }
+        });
+    </script>
+    
+    <header class="relative min-h-[716px] flex items-center pt-24 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img class="w-full h-full object-cover"
+                data-alt="A cinematic, high-contrast photograph of a professional athlete in a gritty industrial gym setting. The scene is bathed in dramatic, low-key lighting with sharp shadows and intense orange light accents reflecting off heavy iron equipment. The atmosphere is powerful and disciplined, showcasing the raw energy and elite performance of the GymPro brand identity in a dark-mode aesthetic."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGSTRwL3AMTA7hYJwUbPkBMxaf-6SvMT3l9ELBzn1sYrn-9YpTZ_otwfKCwOtm5yXxWlaCrM4QCPYwOIdhYAXmJHkjWRLtetShdTXNLNfzTE7uGxVa1UrYYYFKZxjq-LjJwSZa__Bqx0Z6AQMlIGAOmYtRc7xInN7pIoeYli3OGBJy6bKRwkumfUt2eE7meo62FIsYtb68ohyYEYY3r-btmEhQ6I7lQLf5utNRkdqPA17Q_B3zv0qlnCLbJhxyPXTOtaI8iaZvhU68" />
+            <div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
+        </div>
+        <div class="relative z-10 container mx-auto px-8">
+            <div class="max-w-2xl">
+                <span class="text-primary-container font-label-bold tracking-[0.2em] mb-4 block uppercase">PRÉMIOVÉ
+                    SLUŽBY</span>
+                <h1 class="font-display-xl text-display-xl uppercase mb-6">PŘEKONEJ SVÉ<br /><span
+                        class="text-primary-container italic">HRANICE</span></h1>
+                <p class="text-body-lg font-body-lg text-secondary max-w-lg mb-8">
+                    V GYMPRO věříme v disciplínu a výsledky. Naše služby jsou navrženy pro ty, kteří nehledají zkratky,
+                    ale skutečnou sílu a transformaci.
+                </p>
+                <div class="flex gap-4">
+                    <button class="skew-btn bg-primary-container px-8 py-4">
+                        <span class="skew-btn-inner font-button-text text-black uppercase block">REZERVOVAT
+                            KONZULTACI</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section class="py-xxl container mx-auto px-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-7">
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-4 border-2 border-primary-container/20 group-hover:border-primary-container/50 transition-colors pointer-events-none">
+                    </div>
+                    <img class="w-full aspect-video object-cover"
+                        data-alt="Close-up of a personal trainer guiding a client through a heavy weightlifting session. The lighting is high-contrast and moody, highlighting the muscle definition and perspiration. The setting is a modern, industrial gym with metallic textures and carbon grey tones, punctuated by electric orange highlights on the gym equipment."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTGQLyD5yjMYXGBQXHYDjGhPCWluU6NxAT5dPfm8RFzDXa3Wh-SKM37EOQktIwSnmPrjq8L8_rjZ9kbIn3ZvX3B8WuIM0jUKmLmc78p0a8iN4yl4C4ydu0DQpeIbzFwl2G8ANPFowkCBb3DvG8Badhq5uP5AQT4w0_lKJNHxEPmPjunB6AV9VQnIjF3-OhtPeWSs0tlri1OEo5rLvKc-ZeNObQ5oLlLDnI9Ae1yOAqjg-KTmEUWVHMC8ZEFGubQRgCtrsoGOM4oV1P" />
+                </div>
+            </div>
+            <div class="md:col-span-5">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="material-symbols-outlined text-primary-container text-4xl"
+                        data-weight="fill">fitness_center</span>
+                    <h2 class="font-headline-lg text-headline-lg uppercase">Osobní trénink</h2>
+                </div>
+                <div class="w-12 h-2 bg-primary-container mb-8 diagonal-stripes"></div>
+                <p class="text-body-lg font-body-lg text-secondary mb-6">
+                    Maximální efektivita pod dohledem profesionálů. Naši trenéři vytvoří program přesně na míru vašim
+                    cílům, ať už jde o nárůst svalové hmoty, redukci tuku nebo zvýšení síly.
+                </p>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-3 border-b border-neutral-800 pb-3">
+                        <span class="material-symbols-outlined text-primary-container">check_circle</span>
+                        <span class="font-label-bold uppercase">Individuální tréninkový plán</span>
+                    </li>
+                    <li class="flex items-center gap-3 border-b border-neutral-800 pb-3">
+                        <span class="material-symbols-outlined text-primary-container">check_circle</span>
+                        <span class="font-label-bold uppercase">Technika a prevence zranění</span>
+                    </li>
+                    <li class="flex items-center gap-3 border-b border-neutral-800 pb-3">
+                        <span class="material-symbols-outlined text-primary-container">check_circle</span>
+                        <span class="font-label-bold uppercase">Pravidelné měření pokroku</span>
+                    </li>
+                </ul>
+                <a href="kontakt.html"
+                    class="inline-block w-full md:w-auto border-2 border-white px-8 py-4 skew-btn hover:bg-white hover:text-black transition-all text-center">
+                    <span class="skew-btn-inner font-button-text uppercase block">ZJISTIT VÍCE</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="py-xxl bg-surface-container-lowest">
+        <div class="container mx-auto px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-xl gap-8">
+                <div>
+                    <h2 class="font-headline-lg text-headline-lg uppercase mb-4">Skupinové lekce</h2>
+                    <p class="text-body-lg font-body-lg text-secondary max-w-xl">
+                        Energie komunity, která vás vybičuje k lepším výkonům. Od intenzivního kardia po zaměření na
+                        mobilitu.
+                    </p>
+                </div>
+                <a href="kontakt.html" class="inline-block skew-btn bg-primary-container px-8 py-4 text-center">
+                    <span class="skew-btn-inner font-button-text text-black uppercase block">ROZVRH LEKCÍ</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="group relative overflow-hidden aspect-[4/5] bg-surface-container border border-neutral-800">
+                    <img class="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100"
+                        data-alt="A group of people in a synchronized high-intensity spinning class. The room is dark with neon orange lighting streaks, capturing the fast-paced energy and motion blur. The industrial interior features raw concrete walls and high ceilings, reflecting a professional and energetic training environment."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpqo7VugH5pHTZ16lXr0Y63gDj1vzYvxmP9rS90PTRUKyAw-pJn8rJL_pNYJdXLdpmIpAumpYKiix_32czo5gwjWENr-x8bwJbPhT4d-6UTLf8_q-gmDb1p__WxvcQffQ6HYIsBCai-UDSk6RUkzqT3aRV6UmmcP-pBQdh7NoCiTey8S6L7g-Kqw-Bim0f4f_iLKCzErOUW1J9IAJHFvqdTBG4nYXds1IJ184JkfPqnv-Ak3Gaj4_FrvJlsAXb2mc4shacu2-EEm61" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <div class="flex gap-2 mb-3">
+                            <span
+                                class="bg-neutral-900 text-white text-[10px] px-2 py-1 uppercase font-bold tracking-widest border border-neutral-700">KARDIO</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md uppercase text-white mb-2">Spinning</h3>
+                        <p
+                            class="text-secondary text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            Vysokointenzivní trénink na stacionárních kolech doprovázený energickou hudbou.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden aspect-[4/5] bg-surface-container border border-neutral-800">
+                    <img class="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100"
+                        data-alt="A focused person practicing yoga in a minimalist, industrial studio space. Soft, moody lighting highlights the form and balance. The atmosphere is calm yet intense, with a dark color palette of charcoal and slate, emphasizing the discipline of the practice."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF89qD6gVLnfXRrERj6AFksEauRymdwCMGUPa5f9vgWRSU5442kiNLL10xGIJA7vCAeiC3_Jz7EYwxD1kgGcKkyKIrQujftXavFjBe9t5VAnE39kNwNOWgOs4Z2xfjzkQm0I5oUDUdRE7brYScOpWMl0anbHeW8KAnF0cuIxiVcae9_S9YwR0dj3VgW342dqULxHk_Th-Rbt599CEGQzSZ-7TJ7tARirLaYeBV6SQns8eJ697LSuHo8DqsKB90DuG9gVOaQzn2Ap3W" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <div class="flex gap-2 mb-3">
+                            <span
+                                class="bg-neutral-900 text-white text-[10px] px-2 py-1 uppercase font-bold tracking-widest border border-neutral-700">MOBILITA</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md uppercase text-white mb-2">Yoga Flow</h3>
+                        <p
+                            class="text-secondary text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            Propojení dechu a pohybu pro lepší flexibilitu a mentální rovnováhu.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden aspect-[4/5] bg-surface-container border border-neutral-800">
+                    <img class="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100"
+                        data-alt="Athletes performing high-intensity interval training (HIIT) in a large industrial warehouse gym. The scene is raw and gritty, with sweat visible under harsh directional lighting. High-contrast blacks and electric orange equipment create a professional, performance-driven atmosphere."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS0ElfppCuT0XunwuSUB4jOKY1-k685NIBwN6qdQhZrobpeRxc-y8thjfjxcyxAPQoMOetKzDUl1E9nXmcSIsunrLsQbb2GgXWOXaolbuPzDHnxGAJo9ZbleW3z7OM-vgQ4zFDeTQ8aS57TH5sYVNDvLc8xw6-FLxpwTEjm-D5ZT1e_AjKK0ZWcn1syFPUsPazDLThCpXhzHuRM-8ZMEAHjjJDQGShxrFwgUgtmzXyS9hkJvddfwUgPut04Mw71ki3sJJiHB8cJb-N" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <div class="flex gap-2 mb-3">
+                            <span
+                                class="bg-neutral-900 text-white text-[10px] px-2 py-1 uppercase font-bold tracking-widest border border-neutral-700">SÍLA</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md uppercase text-white mb-2">HIIT Core</h3>
+                        <p
+                            class="text-secondary text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            Kombinace síly a vytrvalosti zaměřená na střed těla a spalování.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="py-xxl container mx-auto px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1">
+                <span class="text-primary-container font-label-bold tracking-[0.2em] mb-4 block uppercase">PALIVO PRO
+                    VÁŠ VÝKON</span>
+                <h2 class="font-headline-lg text-headline-lg uppercase mb-8">Výživové poradenství</h2>
+                <p class="text-body-lg font-body-lg text-secondary mb-10">
+                    Trénink je jen polovina úspěchu. Druhá polovina se odehrává v kuchyni. Naši experti vám pomohou
+                    nastavit stravovací návyky tak, aby podporovaly vaše sportovní ambice.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
+                    <div class="p-6 bg-surface-container border-l-4 border-primary-container">
+                        <h4 class="font-headline-md text-[18px] uppercase mb-2">Analýza těla</h4>
+                        <p class="text-secondary text-sm">Měření složení těla, tuku a svalové hmoty na profesionálních
+                            přístrojích.</p>
+                    </div>
+                    <div class="p-6 bg-surface-container border-l-4 border-primary-container">
+                        <h4 class="font-headline-md text-[18px] uppercase mb-2">Jídelníček</h4>
+                        <p class="text-secondary text-sm">Personalizovaný plán založený na vašem bazálním metabolismu a
+                            aktivitě.</p>
+                    </div>
+                </div>
+                <a href="kontakt.html" class="inline-block skew-btn bg-primary-container px-8 py-4 text-center">
+                    <span class="skew-btn-inner font-button-text text-black uppercase block">CHCI KONZULTACI</span>
+                </a>
+            </div>
+            <div class="order-1 md:order-2 relative">
+                <div class="aspect-square relative overflow-hidden">
+                    <img class="w-full h-full object-cover grayscale"
+                        data-alt="A professional, clean presentation of healthy, high-performance nutrition. A dark charcoal background provides contrast for vibrant green vegetables and lean proteins. The lighting is sophisticated and editorial, highlighting the textures of the fresh food. The overall aesthetic is disciplined and high-end, aligned with the GymPro industrial vitality style."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq7GgJgdDTZOv5t4BGRmlhxR8m5ToiYY3AT7j7GGEauhEn56-wx4k2TRrpoO7LvZgts9udxBuNp8K4ZKKl9pJEJPGOohQtiRXpSQgvZ1q1r9nGJhsKPpbPbDT7x4TF7wafXzFtpDtbS12V2jQG6y3bDLWbdya4YjedB8JLjBiJ7QZBZayecQJ7CWEX7JYUcj1GfkVKkaTHOlHxaFvuBe8T2GsG3rzNxE6InO6a33ug1IRW4tlhLVdrRY4H4W51iJTAuIJJPVHLNRLw" />
+                    <div class="absolute inset-0 border-[20px] border-background"></div>
+                    <div class="absolute inset-0 bg-primary-container/10"></div>
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-primary-container p-8 hidden lg:block">
+                    <div class="text-black font-black text-4xl italic">70%</div>
+                    <div class="text-black font-bold text-xs uppercase tracking-widest">ÚSPĚCHU JE STRAVA</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="w-full h-[8px] bg-neutral-900 overflow-hidden">
+        <div class="h-full bg-primary-container diagonal-stripes w-[85%]"></div>
+    </div>
+    
+    <section class="py-xxl bg-neutral-950 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+            <div class="font-black text-[20vw] leading-none select-none">GYMPRO</div>
+        </div>
+        <div class="relative z-10 container mx-auto px-8">
+            <h2 class="font-headline-lg text-headline-lg uppercase mb-6 italic">PŘIPRAVEN ZAČÍT?</h2>
+            <p class="text-body-lg font-body-lg text-secondary mb-10 max-w-2xl mx-auto">
+                První krok je nejtěžší. My vám pomůžeme udělat ten druhý, třetí a každý další až k vašemu cíli.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="skew-btn bg-primary-container px-12 py-5">
+                    <span class="skew-btn-inner font-button-text text-black uppercase block text-lg">ZÍSKAT
+                        ČLENSTVÍ</span>
+                </button>
+                <button
+                    class="skew-btn border-2 border-white px-12 py-5 hover:bg-white hover:text-black transition-all">
+                    <span class="skew-btn-inner font-button-text uppercase block text-lg">KONTAKTOVAT NÁS</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+        <footer class="bg-neutral-950 w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-8 border-t-2 border-neutral-900">
+        <div class="flex flex-col items-center md:items-start gap-4">
+            <div class="text-xl font-black text-white font-space-grotesk uppercase">GYMPRO</div>
+            <p class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 max-w-xs text-center md:text-left">© 2024 GYMPRO. RAW INTENSITY. ALL RIGHTS RESERVED.</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-8">
+            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="index.html">Home</a>
+            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="onas.html">O nás</a>
+            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="sluzby.html">Služby</a>
+            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="cenik.html">Ceník</a>
+            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="lektori.html">Lektoři</a>
+            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="galerie.html">Galerie</a>
+            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="blog.html">Blog</a>
+            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="kontakt.html">Kontakt</a>
+        </div>
+        <div class="flex flex-col items-center md:items-end gap-2">
+            <div class="flex gap-4">
+                <a href="obchodni-podminky.html" class="text-xs uppercase text-neutral-600 hover:text-white">Obchodní podmínky</a>
+                <a href="ochrana-udaju.html" class="text-xs uppercase text-neutral-600 hover:text-white">Ochrana údajů</a>
+            </div>
+            <div class="flex gap-4">
+                <div class="w-10 h-10 border border-neutral-800 flex items-center justify-center hover:bg-orange-600 transition-all group cursor-pointer">
+                    <span class="material-symbols-outlined text-neutral-500 group-hover:text-white">share</span>
+                </div>
+                <div class="w-10 h-10 border border-neutral-800 flex items-center justify-center hover:bg-orange-600 transition-all group cursor-pointer">
+                    <span class="material-symbols-outlined text-neutral-500 group-hover:text-white">mail</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+

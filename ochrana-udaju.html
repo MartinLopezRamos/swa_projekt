@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html class="dark" lang="cs">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#ff5f00",
+                        "background": "#121414",
+                        "surface": "#1e2020",
+                        "on-background": "#e2e2e2",
+                    },
+                    fontFamily: {
+                        "space-grotesk": ["Space Grotesk"],
+                        "lexend": ["Lexend"],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-lexend">
+        
+    <nav class="fixed top-0 w-full bg-neutral-950/90 backdrop-blur-xl border-b border-neutral-800 z-[100]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-black italic text-orange-600 tracking-widest font-space-grotesk uppercase">GYMPRO</a>
+                </div>
+                <div class="hidden lg:flex gap-8 items-center">
+                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="index.html">Home</a>
+                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="onas.html">O nás</a>
+                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="sluzby.html">Služby</a>
+                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="cenik.html">Ceník</a>
+                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="lektori.html">Lektoři</a>
+                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="galerie.html">Galerie</a>
+                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="blog.html">Blog</a>
+                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="kontakt.html">Kontakt</a>
+                </div>
+                <div class="hidden lg:block">
+                    <a href="kontakt.html" class="bg-orange-600 text-black px-6 py-2 font-bold uppercase skew-fix transition-transform hover:scale-105 active:scale-95 font-space-grotesk inline-block">
+                        <span class="inline-block transform skew-x-[5deg]">VSTOUPIT</span>
+                    </a>
+                </div>
+                <div class="lg:hidden flex items-center gap-4">
+                    <a href="kontakt.html" class="bg-orange-600 text-black px-4 py-2 text-sm font-bold uppercase skew-fix font-space-grotesk">
+                        <span class="inline-block transform skew-x-[5deg]">VSTOUPIT</span>
+                    </a>
+                    <button id="mobile-menu-button" class="text-white p-2">
+                        <span class="material-symbols-outlined text-3xl">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-neutral-950 border-b border-neutral-800">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="index.html">Home</a>
+                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="onas.html">O nás</a>
+                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="sluzby.html">Služby</a>
+                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="cenik.html">Ceník</a>
+                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="lektori.html">Lektoři</a>
+                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="galerie.html">Galerie</a>
+                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="blog.html">Blog</a>
+                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="kontakt.html">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            const icon = this.querySelector('.material-symbols-outlined');
+            icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
+        });
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link, #mobile-menu a').forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('text-orange-600');
+                link.classList.remove('text-neutral-400');
+                if (link.classList.contains('nav-link')) {
+                    link.classList.add('border-b-2', 'border-orange-600', 'pb-1');
+                }
+            }
+        });
+    </script>
+
+    <main class="pt-32 pb-16 max-w-4xl mx-auto px-8">
+        <h1 class="text-4xl font-black uppercase font-space-grotesk mb-8 border-l-4 border-orange-600 pl-4">Ochrana osobních údajů</h1>
+        <div class="prose prose-invert text-neutral-400 space-y-6">
+            <p>Vaše soukromí je pro nás prioritou. Zde se dozvíte, jak nakládáme s vašimi osobními údaji v souladu s GDPR.</p>
+            <h2 class="text-xl font-bold text-white uppercase">1. Správce údajů</h2>
+            <p>Správcem osobních údajů je společnost GYMPRO s.r.o., se sídlem Fitness ulice 42, Praha 1.</p>
+            <h2 class="text-xl font-bold text-white uppercase">2. Rozsah zpracovávaných údajů</h2>
+            <p>Zpracováváme údaje nezbytné pro plnění členské smlouvy: jméno, příjmení, email, telefonní číslo a platební údaje.</p>
+            <h2 class="text-xl font-bold text-white uppercase">3. Účel zpracování</h2>
+            <p>Údaje zpracováváme za účelem správy vašeho členství, informování o novinkách a plnění zákonných povinností (účetnictví).</p>
+            <h2 class="text-xl font-bold text-white uppercase">4. Vaše práva</h2>
+            <p>Máte právo na přístup k údajům, jejich opravu, výmaz nebo omezení zpracování. Také máte právo vznést námitku proti zpracování.</p>
+        </div>
+    </main>
+
+        <footer class="bg-neutral-950 w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-8 border-t-2 border-neutral-900">
+        <div class="flex flex-col items-center md:items-start gap-4">
+            <div class="text-xl font-black text-white font-space-grotesk uppercase">GYMPRO</div>
+            <p class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 max-w-xs text-center md:text-left">© 2024 GYMPRO. RAW INTENSITY. ALL RIGHTS RESERVED.</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-8">
+            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="index.html">Home</a>
+            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="onas.html">O nás</a>
+            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="sluzby.html">Služby</a>
+            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="cenik.html">Ceník</a>
+            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="lektori.html">Lektoři</a>
+            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="galerie.html">Galerie</a>
+            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="blog.html">Blog</a>
+            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="kontakt.html">Kontakt</a>
+        </div>
+        <div class="flex flex-col items-center md:items-end gap-2">
+            <div class="flex gap-4">
+                <a href="obchodni-podminky.html" class="text-xs uppercase text-neutral-600 hover:text-white">Obchodní podmínky</a>
+                <a href="ochrana-udaju.html" class="text-xs uppercase text-neutral-600 hover:text-white">Ochrana údajů</a>
+            </div>
+            <div class="flex gap-4">
+                <div class="w-10 h-10 border border-neutral-800 flex items-center justify-center hover:bg-orange-600 transition-all group cursor-pointer">
+                    <span class="material-symbols-outlined text-neutral-500 group-hover:text-white">share</span>
+                </div>
+                <div class="w-10 h-10 border border-neutral-800 flex items-center justify-center hover:bg-orange-600 transition-all group cursor-pointer">
+                    <span class="material-symbols-outlined text-neutral-500 group-hover:text-white">mail</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+
