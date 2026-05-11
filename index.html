@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="cs"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#ff5f00",
+                    "secondary": "#c8c6c5",
+                    "surface-container-low": "#1a1c1c",
+                    "error": "#ffb4ab",
+                    "on-primary-fixed": "#370e00",
+                    "on-error": "#690005",
+                    "tertiary": "#c8c6c5",
+                    "primary": "#ffb599",
+                    "outline-variant": "#5b4137",
+                    "on-background": "#e2e2e2",
+                    "on-primary-container": "#531a00",
+                    "surface-container-highest": "#333535",
+                    "on-secondary": "#313030",
+                    "primary-fixed": "#ffdbce",
+                    "on-secondary-fixed-variant": "#474746",
+                    "background": "#121414",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-error-container": "#ffdad6",
+                    "on-primary": "#5a1c00",
+                    "on-tertiary": "#303030",
+                    "surface-container-high": "#282a2b",
+                    "secondary-container": "#474746",
+                    "secondary-fixed": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "surface-container-lowest": "#0c0f0f",
+                    "surface-tint": "#ffb599",
+                    "inverse-on-surface": "#2f3131",
+                    "error-container": "#93000a",
+                    "on-surface-variant": "#e4bfb1",
+                    "on-tertiary-container": "#2c2c2c",
+                    "primary-fixed-dim": "#ffb599",
+                    "on-secondary-container": "#b7b5b4",
+                    "outline": "#ab8a7d",
+                    "inverse-surface": "#e2e2e2",
+                    "on-primary-fixed-variant": "#7f2b00",
+                    "inverse-primary": "#a63b00",
+                    "tertiary-container": "#959393",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "surface": "#121414",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "surface-dim": "#121414",
+                    "on-surface": "#e2e2e2",
+                    "surface-bright": "#37393a",
+                    "surface-container": "#1e2020",
+                    "surface-variant": "#333535",
+                    "tertiary-fixed": "#e4e2e1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xxl": "64px",
+                    "gutter": "16px",
+                    "sm": "8px",
+                    "container-margin": "20px",
+                    "md": "16px",
+                    "unit": "4px",
+                    "lg": "24px",
+                    "xl": "40px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Space Grotesk"],
+                    "button-text": ["Space Grotesk"],
+                    "label-bold": ["Lexend"],
+                    "headline-lg": ["Space Grotesk"],
+                    "body-md": ["Lexend"],
+                    "body-lg": ["Lexend"],
+                    "display-xl": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "button-text": ["16px", {"lineHeight": "1", "fontWeight": "700"}],
+                    "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .skew-fix { transform: skew(-5deg); }
+        .skew-fix > * { transform: skew(5deg); }
+        .glass-panel {
+            background: rgba(18, 20, 20, 0.4);
+            backdrop-filter: blur(24px);
+        }
+        .textured-bg {
+            background-image: linear-gradient(45deg, transparent 45%, rgba(255, 95, 0, 0.05) 45%, rgba(255, 95, 0, 0.05) 55%, transparent 55%);
+            background-size: 8px 8px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-8 py-4 max-w-full bg-neutral-950/90 backdrop-blur-xl border-b border-neutral-800 z-50">
+<div class="text-2xl font-black italic text-orange-600 tracking-widest font-space-grotesk uppercase">GYMPRO</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-space-grotesk font-bold uppercase tracking-tighter text-orange-600 border-b-2 border-orange-600 pb-1" href="#">Home</a>
+<a class="font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="#">O nás</a>
+<a class="font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="#">Služby</a>
+<a class="font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="#">Ceník</a>
+<a class="font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="#">Lektoři</a>
+<a class="font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="#">Kontakt</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 font-button-text text-button-text uppercase skew-fix transition-transform hover:scale-105 active:scale-95">
+<span>VSTOUPIT</span>
+</button>
+</nav>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative h-[921px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale brightness-50" data-alt="A high-intensity fitness scene featuring a determined athlete performing heavy deadlifts in a gritty, industrial-style gym. The lighting is dramatic and cinematic, with high-contrast shadows emphasizing muscle definition and raw power. The environment is dark and moody, primarily utilizing deep charcoal tones with subtle sparks of electric orange reflecting off metallic surfaces. The overall aesthetic is professional, premium, and intensely energetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5H2Np-N-QjT_HvmM1sWZtMBeIkz_3PTjYQFsCogHkYmsamdg3Z8CEN9w1A4GPwee_I9xYzPnKpB1B38iVMk5wYnuY75PQMXVL1I1vkDZOdTWJQilZxWVHh2eRt-iUZLWoOb5hKM0tABcYMogqX5aKW-qMvWY-52SbRQBRciqlbfOP-k2DRaqh6UmS8JbciIPAU4nRKJfQzXIlweV0DFbQs7WIpm262rdfvHUNyEHstmJVBKOE9i4_ZVZMdnPjGldscACV1D0Seut0"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
+</div>
+<div class="container mx-auto px-8 relative z-10">
+<div class="max-w-3xl">
+<div class="flex items-center gap-2 mb-4">
+<span class="w-12 h-[2px] bg-primary-container"></span>
+<span class="font-label-bold text-label-bold tracking-[0.2em] text-primary-container uppercase">Premium Training Facility</span>
+</div>
+<h1 class="font-display-xl text-display-xl mb-8 uppercase italic leading-none">TVOJE CESTA K SÍLE ZAČÍNÁ TADY</h1>
+<p class="font-body-lg text-body-lg text-secondary mb-10 max-w-xl">
+                        Přestaň hledat výmluvy a začni budovat svou nejlepší verzi. Elitní zázemí, profesionální lektoři a komunita, která tě nenechá polevit.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary-container text-white px-10 py-5 font-button-text text-button-text uppercase skew-fix hover:bg-orange-500 transition-all flex items-center justify-center gap-2">
+<span>ZAČNI DNES</span>
+<span class="material-symbols-outlined">trending_flat</span>
+</button>
+<button class="border-2 border-white text-white px-10 py-5 font-button-text text-button-text uppercase skew-fix hover:bg-white hover:text-black transition-all flex items-center justify-center">
+<span>PROHLÉDNOUT PLÁNY</span>
+</button>
+</div>
+</div>
+</div>
+<div class="absolute bottom-10 right-10 hidden xl:flex flex-col gap-6 items-end">
+<div class="flex gap-4 items-center">
+<span class="text-white/40 font-label-bold text-sm">FOLLOW US</span>
+<div class="w-px h-12 bg-neutral-800"></div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary hover:text-primary-container cursor-pointer">social_leaderboard</span>
+<span class="material-symbols-outlined text-secondary hover:text-primary-container cursor-pointer">share_reviews</span>
+<span class="material-symbols-outlined text-secondary hover:text-primary-container cursor-pointer">camera_enhance</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Overview - Bento Grid -->
+<section class="py-xxl container mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg uppercase italic mb-4">NAŠE SLUŽBY</h2>
+<p class="text-secondary font-body-md">Kombinujeme vědu o pohybu s neúprosnou intenzitou. Vyber si svou cestu k výsledkům, které nelze přehlédnout.</p>
+</div>
+<div class="flex gap-4">
+<div class="p-3 border border-neutral-800 hover:border-primary-container transition-colors cursor-pointer"><span class="material-symbols-outlined">arrow_back</span></div>
+<div class="p-3 border border-neutral-800 hover:border-primary-container transition-colors cursor-pointer"><span class="material-symbols-outlined">arrow_forward</span></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Main Service -->
+<div class="md:col-span-8 relative group overflow-hidden min-h-[450px] border border-neutral-900">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-[0.4]" data-alt="Close-up of a personal trainer guiding a client through a sophisticated weightlifting movement in a sleek, dark-themed gym environment. The scene is illuminated by sharp, cool white overhead lights and warm orange ambient glows from the equipment displays. The focus is on the intensity and professional supervision, maintaining a high-contrast, premium industrial look with sharp focus and cinematic depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2j7wAuk3WJ78lQXWkkIOZTKILPu5cZLOlAkCSuoNP8iRtDkVWMUwHITe2IrcGFuDgHy-qOVTE6DpwSX__1kMtfCipIs1QXKH3bkYPUGkpJM32DaIyAqu-6JllPA5IPsYT2WGpBfuGWfZyEXaUwqavN50hh_5_3QMvbmK2hFtM2aS8DxJw9nXsCbegFI8D9AafS2IGJgPj_u63Qh9m4LWKDpR4onEM1t6y_vE8bL1ekEJngaiot4zH0sbhWHLP4_ETkHDY3gpkyQ5Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<div class="bg-neutral-900/80 backdrop-blur-md px-3 py-1 inline-block mb-4">
+<span class="text-xs font-bold tracking-[0.3em] text-primary-container uppercase">PROFESIONÁLNÍ PŘÍSTUP</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase mb-2">Osobní trénink</h3>
+<p class="text-secondary max-w-md mb-6">Individuální programy navržené tak, aby maximalizovaly tvůj potenciál pod dohledem těch nejlepších v oboru.</p>
+<button class="flex items-center gap-2 group-hover:text-primary-container transition-colors font-bold uppercase text-sm">
+                            Zjistit více <span class="material-symbols-outlined text-sm">north_east</span>
+</button>
+</div>
+</div>
+<!-- Side Services Column -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<!-- Group Classes -->
+<div class="flex-1 relative group overflow-hidden border border-neutral-900 min-h-[210px]">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-[0.3]" data-alt="A dynamic shot of a high-energy group fitness class in a modern, industrial studio space. Silhouette-like figures of athletes are seen moving in synchrony against a dark background, highlighted by sharp orange LED strips along the floor and ceiling. The mood is collective, energetic, and high-performance, with a dark-mode professional aesthetic and gritty textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKKjwlcXJ9suHDmJ-BSeyARhO2Dq5_Vg2LbWjuYnl7jv8gJrZAcHXsJId-vjfgaKvPLpj26BFk4hXVi3wYLqYlFx96MPoBVZhGPh5lfrAc-M82hYci0vropFYXMXUxwbC9aXCJpjBeBQJZM_j6klmcwbwfKlDH8nO1IIookYiEGTGfHdxeyVZzIButbbDlwduhwaFRHHa-JSQ9BcL0z2bgpEtGh9JUG_NhEkl2OywabDeBr12DYvcuBl_ofZd1O5XfYjLvrkY8Ky44"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-0 p-6">
+<h3 class="font-headline-md text-headline-md text-xl uppercase mb-1">Skupinové lekce</h3>
+<button class="material-symbols-outlined text-primary-container group-hover:translate-x-2 transition-transform">trending_flat</button>
+</div>
+</div>
+<!-- Nutrition -->
+<div class="flex-1 relative group overflow-hidden border border-neutral-900 min-h-[210px]">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-[0.3]" data-alt="Modern fitness nutrition concept featuring meticulously prepared healthy meals in sleek containers arranged on a dark, textured slate surface. Beside the food are high-end supplements and a shaker. The lighting is moody and editorial, with sharp highlights on fresh ingredients and vibrant orange accents in the branding of the containers, fitting the GYMPRO industrial dark-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTNt8NNvezl2wmSwx1pH8KzNz4g8w8O7noi9fbrO9hbyqJaUX6YVZFIKL68iI5JXu6wsJovPdOgssN9oC4zg_qCMnjCLs1vlOHLcpkSJbSEpTJqugIwiG7jRZSvDSgJzg74o_8eG0HDFR4Yu5h6UFdgwAOv35S6X4l-_qY-jeLxWgKTQ4OHEO1noYusWAUO3_T3JHpDPPhQ9UAn1h9GkUZYnYSF_a4K24GpWXPivkED57o4XXViHVOqFiaiNoQ22W_zYPPMfBNETNY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-0 p-6">
+<h3 class="font-headline-md text-headline-md text-xl uppercase mb-1">Výživové poradenství</h3>
+<button class="material-symbols-outlined text-primary-container group-hover:translate-x-2 transition-transform">trending_flat</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Current Promotions -->
+<section class="bg-surface-container-low py-xxl relative overflow-hidden">
+<div class="textured-bg absolute inset-0 opacity-20"></div>
+<div class="container mx-auto px-8 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+<div>
+<span class="font-label-bold text-primary-container tracking-widest uppercase mb-4 block">LIMITOVANÁ NABÍDKA</span>
+<h2 class="font-headline-lg text-headline-lg uppercase italic mb-6 leading-tight">ZÍSKEJ 14 DNÍ <br/> <span class="text-primary-container">ZDARMA</span> NA ZKOUŠKU</h2>
+<p class="font-body-lg text-secondary mb-10 max-w-lg">
+                            Otestuj naše špičkové vybavení, vyzkoušej libovolnou skupinovou lekci a poznej naši komunitu. Bez závazků. Jen čistý trénink.
+                        </p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+<span class="font-bold uppercase tracking-tight">Vstup do všech zón fitka</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+<span class="font-bold uppercase tracking-tight">1x Diagnostika těla zdarma</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+<span class="font-bold uppercase tracking-tight">Vstup na skupinové lekce</span>
+</li>
+</ul>
+<button class="bg-white text-black px-12 py-5 font-button-text uppercase skew-fix font-black hover:bg-primary-container hover:text-white transition-all">
+                            CHCI VYUŽÍT NABÍDKU
+                        </button>
+</div>
+<div class="relative">
+<div class="absolute -top-10 -left-10 w-40 h-40 bg-primary-container/10 blur-3xl rounded-full"></div>
+<div class="border-2 border-primary-container p-4 skew-fix">
+<img class="w-full grayscale" data-alt="A focused close-up of heavy-duty gym equipment, specifically a squat rack and iron plates, in a minimalist, industrial setting. The image is monochrome with deep blacks and bright silver highlights, save for sharp, electric orange accents on the equipment adjustment pins. The lighting is harsh and direct, creating long, dramatic shadows that emphasize the professional and rugged nature of the GYMPRO brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADqgiHSsW-4qSaHbSbAdDPk0Eh2f-JVbNGmEPmWqUoF-CSue4H9pooU7Az0_9ktfRDso0qv3h9n5tSjAHCe_9ktFnRvcaGCnfok0Ix2xUSClrpzDafILgsAQ9z2bRXpbV9vSC-j_3Tw8KfFbJgTF5F82JRCBNb5IVhYQwvEskk8AabVxd-LwU89Aj7s06KCTFfxAUSkH_8yNiIvTzBfE6uhHwCJzlYyl_NFkIN3KK8h0Stq0jIm2gPffmZGd1uW9x-hU-k3ETuTDLG"/>
+</div>
+<div class="absolute -bottom-6 -right-6 bg-primary-container p-8 skew-fix">
+<div class="-skew-fix text-white text-center">
+<div class="text-5xl font-black italic">-50%</div>
+<div class="text-xs font-bold tracking-widest uppercase">na první členství</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Blog & Pricing Shortlinks -->
+<section class="py-xxl container mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
+<!-- Blog Link -->
+<div class="group cursor-pointer">
+<div class="mb-6 overflow-hidden border border-neutral-800">
+<img class="w-full h-[300px] object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A lifestyle photography shot of a professional athlete resting during a break, reading a blog on a tablet. The setting is a clean, dark-themed recovery lounge of a high-end gym. The color palette is composed of charcoal, silver, and vibrant orange light reflections. The mood is informative and calm, reflecting the professional educational content of the GYMPRO blog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6oV6oXBJkAdS2RnM0aZHjk13BziAeeihXdEosg-uGfaNYBbJZoBLoCqo7-9ruPQQAw7wLbQXPZoBznhmmr0Q6iJKZ0xoE1ehI9f0uXDzYGP34UrHSeCoo8t1elyo37gBD312EM7BqBMTCdvGvi_LXd3qwMPg2rVLcaa1Ia_Jwjm3rUDMLNs5x1FbHE_Va7IifDQDTnvf-AWJNO5R2NhbC87NdTBdJKUTZFjbYW3A9JuDXBAS7iEY0sG9YOQtlMapRA8W1plOVDT2I"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-headline-md uppercase mb-2 group-hover:text-primary-container transition-colors">BLOG &amp; TIPY</h4>
+<p class="text-secondary font-body-md max-w-sm">Přečti si nejnovější články o tréninku, stravě a regeneraci od našich expertů.</p>
+</div>
+<span class="material-symbols-outlined text-4xl group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+</div>
+</div>
+<!-- Pricing Link -->
+<div class="group cursor-pointer">
+<div class="mb-6 overflow-hidden border border-neutral-800">
+<img class="w-full h-[300px] object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A clean, minimalist shot of a GYMPRO membership card and a high-end metal water bottle placed on a polished dark concrete counter. The lighting is soft but directed, highlighting the premium metallic textures and the bold orange GYMPRO logo on the card. The aesthetic is sophisticated, reflecting a clear and straightforward approach to membership and pricing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoy8EapeQFx408RaO9w2AZI5JrtJRUsPiewIlT3hQP0hUpIWfuclsU2_vhPHMmRavgdrloyN7uaZXQpamqggbKDlUeA8R6cfcRtGu2kDDxvN91VWc0PbR7TudZ2ewXaZLkbOBYMHmy627AcEFpD8eVaYjOZTQKGEoPSNwIb4btT9qfxhWaoFg-7uGsPiHgmK4xpyeOOwAQJvAaCheN9nT4iBwtNbtN6ChQkBkUIdNb5VOAmmd7s396awC2CwcWlaG0yxlMDcnonUAn"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-headline-md uppercase mb-2 group-hover:text-primary-container transition-colors">CENÍK &amp; ČLENSTVÍ</h4>
+<p class="text-secondary font-body-md max-w-sm">Transparentní ceny bez skrytých poplatků. Vyber si plán, který sedí tvým cílům.</p>
+</div>
+<span class="material-symbols-outlined text-4xl group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-950 w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-8 border-t-2 border-neutral-900">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="text-xl font-black text-white font-space-grotesk uppercase">GYMPRO</div>
+<p class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 max-w-xs text-center md:text-left">
+                © 2024 GYMPRO. RAW INTENSITY. ALL RIGHTS RESERVED.
+            </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="#">Galerie</a>
+<a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="#">Blog</a>
+<a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="#">Obchodní podmínky</a>
+<a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="#">Ochrana údajů</a>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 border border-neutral-800 flex items-center justify-center hover:bg-primary-container transition-all group cursor-pointer">
+<span class="material-symbols-outlined text-neutral-500 group-hover:text-white">share</span>
+</div>
+<div class="w-10 h-10 border border-neutral-800 flex items-center justify-center hover:bg-primary-container transition-all group cursor-pointer">
+<span class="material-symbols-outlined text-neutral-500 group-hover:text-white">mail</span>
+</div>
+</div>
+</footer>
+</body></html>
