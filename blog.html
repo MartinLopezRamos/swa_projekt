@@ -1,380 +1,151 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="cs">
-
+<html class="light" lang="cs">
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Blog | APEX BOXING</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Lexend:wght@300;400;500;600;700&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-
-        .industrial-skew {
-            transform: skew(-5deg);
-        }
-
-        .industrial-skew-reverse {
-            transform: skew(5deg);
-        }
-
-        .glass-overlay {
-            backdrop-filter: blur(20px);
-            background: rgba(18, 20, 20, 0.4);
-        }
-    </style>
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     "colors": {
-                        "outline": "#ab8a7d",
-                        "surface-variant": "#333535",
-                        "outline-variant": "#5b4137",
-                        "tertiary-fixed-dim": "#c8c6c5",
-                        "on-secondary-fixed": "#1c1b1b",
-                        "secondary-fixed": "#e5e2e1",
-                        "error-container": "#93000a",
-                        "surface-container-lowest": "#0c0f0f",
-                        "inverse-primary": "#a63b00",
-                        "on-tertiary-container": "#2c2c2c",
-                        "inverse-on-surface": "#2f3131",
-                        "surface-tint": "#ffb599",
-                        "error": "#ffb4ab",
-                        "tertiary": "#c8c6c5",
-                        "primary-container": "#ff5f00",
-                        "on-primary-fixed-variant": "#7f2b00",
-                        "on-tertiary": "#303030",
-                        "on-primary-container": "#531a00",
-                        "on-background": "#e2e2e2",
-                        "tertiary-container": "#959393",
-                        "on-tertiary-fixed-variant": "#474746",
-                        "secondary": "#c8c6c5",
-                        "inverse-surface": "#e2e2e2",
-                        "tertiary-fixed": "#e4e2e1",
-                        "surface-dim": "#121414",
-                        "surface-bright": "#37393a",
-                        "surface": "#121414",
-                        "background": "#121414",
-                        "on-secondary": "#313030",
-                        "surface-container-high": "#282a2b",
-                        "on-secondary-container": "#b7b5b4",
-                        "secondary-fixed-dim": "#c8c6c5",
-                        "primary-fixed-dim": "#ffb599",
-                        "primary": "#ffb599",
-                        "on-surface": "#e2e2e2",
-                        "on-primary": "#5a1c00",
-                        "surface-container": "#1e2020",
-                        "primary-fixed": "#ffdbce",
-                        "on-surface-variant": "#e4bfb1",
-                        "on-error-container": "#ffdad6",
-                        "surface-container-low": "#1a1c1c",
-                        "on-primary-fixed": "#370e00",
-                        "surface-container-highest": "#333535",
-                        "on-secondary-fixed-variant": "#474746",
-                        "on-error": "#690005",
-                        "secondary-container": "#474746",
-                        "on-tertiary-fixed": "#1b1c1c"
+                        "secondary": "#bc000c",
+                        "primary": "#000000",
+                        "on-surface": "#1a1c1c",
+                        "on-surface-variant": "#4c4546",
+                        "surface": "#f9f9f9",
+                        "surface-container": "#eeeeee"
                     },
                     "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
+                        "DEFAULT": "0px"
                     },
                     "spacing": {
-                        "md": "16px",
-                        "xxl": "64px",
-                        "xs": "4px",
-                        "xl": "40px",
-                        "container-margin": "20px",
-                        "sm": "8px",
-                        "lg": "24px",
-                        "unit": "4px",
-                        "gutter": "16px"
+                        "container-max": "1440px",
+                        "section-padding-mobile": "64px",
+                        "gutter": "24px",
+                        "section-padding-desktop": "120px"
                     },
                     "fontFamily": {
-                        "body-md": ["Lexend"],
-                        "label-bold": ["Lexend"],
-                        "headline-md": ["Space Grotesk"],
-                        "headline-lg": ["Space Grotesk"],
-                        "body-lg": ["Lexend"],
-                        "display-xl": ["Space Grotesk"],
-                        "button-text": ["Space Grotesk"]
-                    },
-                    "fontSize": {
-                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
-                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "600" }],
-                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
-                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
-                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
-                        "display-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-                        "button-text": ["16px", { "lineHeight": "1", "fontWeight": "700" }]
+                        "headline-md": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-bold": ["Inter"]
                     }
                 },
             },
         }
     </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+        }
+    </style>
 </head>
-
-<body class="bg-background text-on-background font-body-md overflow-x-hidden">
-    
-        
-    <nav class="fixed top-0 w-full bg-neutral-950/90 backdrop-blur-xl border-b border-neutral-800 z-[100]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0">
-                    <a href="index.html" class="text-2xl font-black italic text-orange-600 tracking-widest font-space-grotesk uppercase">GYMPRO</a>
-                </div>
-                <div class="hidden lg:flex gap-8 items-center">
-                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="index.html">Home</a>
-                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="onas.html">O nás</a>
-                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="sluzby.html">Služby</a>
-                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="cenik.html">Ceník</a>
-                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="lektori.html">Lektoři</a>
-                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="galerie.html">Galerie</a>
-                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="blog.html">Blog</a>
-                    <a class="nav-link font-space-grotesk font-bold uppercase tracking-tighter text-neutral-400 hover:text-white transition-colors" href="kontakt.html">Kontakt</a>
-                </div>
-                <div class="hidden lg:block">
-                    <a href="kontakt.html" class="bg-orange-600 text-black px-6 py-2 font-bold uppercase skew-fix transition-transform hover:scale-105 active:scale-95 font-space-grotesk inline-block">
-                        <span class="inline-block transform skew-x-[5deg]">VSTOUPIT</span>
-                    </a>
-                </div>
-                <div class="lg:hidden flex items-center gap-4">
-                    <a href="kontakt.html" class="bg-orange-600 text-black px-4 py-2 text-sm font-bold uppercase skew-fix font-space-grotesk">
-                        <span class="inline-block transform skew-x-[5deg]">VSTOUPIT</span>
-                    </a>
-                    <button id="mobile-menu-button" class="text-white p-2">
-                        <span class="material-symbols-outlined text-3xl">menu</span>
-                    </button>
+<body class="font-body-md text-body-md selection:bg-secondary selection:text-white">
+    <header class="bg-surface sticky top-0 z-50 border-b border-primary">
+        <nav class="flex justify-between items-center px-gutter py-4 w-full max-w-container-max mx-auto">
+            <div class="flex items-center gap-8">
+                <a class="font-display-lg text-headline-md tracking-tighter uppercase text-primary" href="index.html">APEX BOXING</a>
+                <div class="hidden md:flex items-center gap-6">
+                    <a class="font-label-bold text-label-bold text-primary hover:text-secondary transition-colors" href="index.html">Domů</a>
+                    <a class="font-label-bold text-label-bold text-primary hover:text-secondary transition-colors" href="sluzby.html">Produkty</a>
+                    <a class="font-label-bold text-label-bold text-primary hover:text-secondary transition-colors" href="cenik.html">Ceník</a>
+                    <a class="font-label-bold text-label-bold text-primary hover:text-secondary transition-colors" href="galerie.html">Galerie</a>
+                    <a class="font-label-bold text-label-bold text-primary hover:text-secondary transition-colors" href="onas.html">O nás</a>
+                    <a class="font-label-bold text-label-bold text-primary hover:text-secondary transition-colors" href="kariera.html">Kariéra</a>
+                    <a class="font-label-bold text-label-bold text-primary hover:text-secondary transition-colors" href="faq.html">FAQ</a>
+                    <a class="font-label-bold text-label-bold text-secondary border-b-2 border-secondary pb-1" href="blog.html">Blog</a>
+                    <a class="font-label-bold text-label-bold text-primary hover:text-secondary transition-colors" href="kontakt.html">Kontakt</a>
                 </div>
             </div>
-        </div>
-        <div id="mobile-menu" class="hidden lg:hidden bg-neutral-950 border-b border-neutral-800">
-            <div class="px-4 pt-2 pb-6 space-y-1">
-                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="index.html">Home</a>
-                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="onas.html">O nás</a>
-                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="sluzby.html">Služby</a>
-                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="cenik.html">Ceník</a>
-                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="lektori.html">Lektoři</a>
-                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="galerie.html">Galerie</a>
-                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="blog.html">Blog</a>
-                <a class="block px-3 py-4 text-xl font-space-grotesk font-bold uppercase text-neutral-400 hover:text-orange-600" href="kontakt.html">Kontakt</a>
+            <div class="flex items-center gap-4">
+                <!-- Search bar removed -->
             </div>
-        </div>
-    </nav>
-    <script>
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-            const icon = this.querySelector('.material-symbols-outlined');
-            icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
-        });
-        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-        document.querySelectorAll('.nav-link, #mobile-menu a').forEach(link => {
-            if (link.getAttribute('href') === currentPath) {
-                link.classList.add('text-orange-600');
-                link.classList.remove('text-neutral-400');
-                if (link.classList.contains('nav-link')) {
-                    link.classList.add('border-b-2', 'border-orange-600', 'pb-1');
-                }
-            }
-        });
-    </script>
-    
-    <header class="relative pt-xxl pb-xl px-8 flex items-end min-h-[614px] bg-surface overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10"></div>
-            <img class="w-full h-full object-cover grayscale opacity-40"
-                data-alt="A cinematic wide shot of a high-end industrial fitness facility with heavy steel racks and moody spotlighting. The gym features dark charcoal walls and raw concrete floors, with a vibrant electric orange accent on a distant wall. The atmosphere is intense and professional, captured with a shallow depth of field and high-contrast lighting that emphasizes the grit and discipline of professional training."
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdP6Hj6P9Veib4NoKd5vY4k7xnY49HyLvgAUeubDJvt-7uc1dmQn3Dv1Db9r6DjhaZXLPvkmumAgUtGEvlij6n770ojllFE1kWIByUS36XxF461Jw7tO5k5dU9T2wp_bJ0Uz7z-W3DrtNAMvwkH5GygVdQzoFfK49JxDGOKRgNYe3UhR8atZGsba4QNJbavZIjE8h-oYXo_-0IEAGUow22pD7w9Zd3vmGLY9iRpza57x8sPBXKUU4ZENQrDG34zu7R-SzZ_YHZiP-G" />
-        </div>
-        <div class="relative z-20 max-w-7xl mx-auto w-full">
-            <div class="mb-sm">
-                <span
-                    class="bg-primary-container text-on-primary-container px-3 py-1 font-button-text text-xs uppercase tracking-widest">KNOWLEDGE
-                    IS GAIN</span>
-            </div>
-            <h1 class="font-display-xl text-display-xl uppercase text-white mb-md max-w-3xl">BLOG PRO OPRAVDOVÉ
-                PROFESIONÁLY</h1>
-            <p class="text-body-lg font-body-lg text-secondary-fixed max-w-xl">
-                Získejte náskok díky vědecky podloženým metodám, zkušenostem našich elitních lektorů a disciplíně, která
-                definuje GYMPRO.
-            </p>
-        </div>
+        </nav>
     </header>
-    
-    <main class="max-w-7xl mx-auto px-8 py-xxl">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
-            
-            <article
-                class="md:col-span-8 group relative overflow-hidden bg-surface-container border border-neutral-800 transition-all hover:border-orange-600">
-                <div class="aspect-[16/9] overflow-hidden">
-                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80"
-                        data-alt="A close-up shot of a determined athlete gripping a heavy iron barbell in a dark, high-contrast industrial gym. The lighting is harsh and dramatic, highlighting sweat and intense muscular focus. The color palette is dominated by deep blacks and cool greys with striking electric orange glints reflecting off the polished metal surfaces, creating an energetic and authoritative vibe."
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5n8AIXlwJ9_-GnR2S3UUNvcud_0xrRgMkSdVYYQcJ70jYaNKsEuMZOiR4ckoRnZRHDk04aXNOl-zDN4MdgBBK4NroulXMILki4_O-tz2p0wSBMHI0LOv1FNP3-mqrdy6MXCsznzodlme3OEyLktQu6A6xFEiPFLLDV8RprATBdY8XwTmBvnP9FmF8eEzI9sjzhx0iwhX1hC2mZW0kStupBMMK2nPxrBWYWTX6RX5LosP75tnrQl2iJB_SUseOrPpD7-Byd4aVQTq9" />
+
+    <main class="max-w-container-max mx-auto px-gutter py-20">
+        <div class="mb-16">
+            <h1 class="font-display-lg text-headline-lg uppercase text-primary mb-4">Blog &amp; Novinky</h1>
+            <div class="h-1 w-24 bg-secondary"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <article class="group cursor-pointer">
+                <div class="aspect-video bg-surface-container border border-primary overflow-hidden mb-6">
+                    <img alt="Blog 1" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS0ElfppCuT0XunwuSUB4jOKY1-k685NIBwN6qdQhZrobpeRxc-y8thjfjxcyxAPQoMOetKzDUl1E9nXmcSIsunrLsQbb2GgXWOXaolbuPzDHnxGAJo9ZbleW3z7OM-vgQ4zFDeTQ8aS57TH5sYVNDvLc8xw6-FLxpwTEjm-D5ZT1e_AjKK0ZWcn1syFPUsPazDLThCpXhzHuRM-8ZMEAHjjJDQGShxrFwgUgtmzXyS9hkJvddfwUgPut04Mw71ki3sJJiHB8cJb-N" />
                 </div>
-                <div class="p-lg">
-                    <div class="flex items-center gap-md mb-sm">
-                        <span class="font-label-bold text-label-bold text-orange-600">10. KVĚTEN 2025</span>
-                        <span class="h-1 w-1 rounded-full bg-neutral-600"></span>
-                        <span class="font-label-bold text-label-bold text-neutral-400">TOMÁŠ KOVÁŘ</span>
-                    </div>
-                    <h2
-                        class="font-headline-lg text-headline-lg text-white mb-md group-hover:text-orange-500 transition-colors uppercase">
-                        JAK ZAČÍT S POSILOVÁNÍM</h2>
-                    <p class="text-body-md font-body-md text-secondary mb-lg max-w-2xl">
-                        Vstup do světa fitness vyžaduje víc než jen odhodlání. Naučíme vás základy správné techniky, jak
-                        se vyhnout zraněním a jak si nastavit realistické cíle pro dlouhodobý progres.
-                    </p>
-                    <a class="inline-flex items-center gap-sm font-button-text text-white group/btn" href="kontakt.html">
-                        <span>ČÍST VÍCE</span>
-                        <span
-                            class="material-symbols-outlined text-orange-600 group-hover/btn:translate-x-2 transition-transform">arrow_forward</span>
-                    </a>
+                <div class="flex gap-4 mb-4">
+                    <span class="font-label-bold text-xs uppercase text-secondary">Recenze</span>
+                    <span class="font-label-bold text-xs uppercase opacity-40">15. Května 2024</span>
                 </div>
+                <h2 class="font-headline-md uppercase mb-4 group-hover:text-secondary transition-colors">Proč zvolit kůži před syntetikou?</h2>
+                <p class="text-on-surface-variant line-clamp-3">V tomto článku rozebíráme výhody přírodní kůže pro vaše boxerské vybavení a proč se investice do kvality vyplatí z dlouhodobého hlediska.</p>
             </article>
-            
-            <article
-                class="md:col-span-4 flex flex-col group bg-surface-container border border-neutral-800 hover:border-orange-600 transition-all">
-                <div class="aspect-square overflow-hidden">
-                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80"
-                        data-alt="A professional female athlete performing a heavy deadlift, showing perfect back alignment and muscle activation. The background is a blurred industrial training center with glowing neon orange accents. High-contrast photography emphasizes the grit and athletic power, adhering to the brand's dark mode minimalist aesthetic with intense color splashes."
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrXvJWvEaLVlZvfkDP1R_CEQF2YRqO4f64qdxgUveWgDYJv-mBvJvFFmdxrqbjp15vRFdQ_zY--_3PQIoUjMQz4rLv4a-lKwZ-xVcGKVsbFQFO_VNWvm1QaxkqwviNZbVG1vIs2DYPa9q2ocyFFpJU3_xBILv3NBqHwLJdxvdXGJ0C64f2N7t7G6-Lg0t6ohBUh-H5PBP6JAV7OxPmK7heE3Q_5RX5FDfDzqnkGGwfz1i7moe-D2FPj2ISxOl41PYLV3Mza67W2RKS" />
+
+            <article class="group cursor-pointer">
+                <div class="aspect-video bg-surface-container border border-primary overflow-hidden mb-6">
+                    <img alt="Blog 2" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGSTRwL3AMTA7hYJwUbPkBMxaf-6SvMT3l9ELBzn1sYrn-9YpTZ_otwfKCwOtm5yXxWlaCrM4QCPYwOIdhYAXmJHkjWRLtetShdTXNLNfzTE7uGxVa1UrYYYFKZxjq-LjJwSZa__Bqx0Z6AQMlIGAOmYtRc7xInN7pIoeYli3OGBJy6bKRwkumfUt2eE7meo62FIsYtb68ohyYEYY3r-btmEhQ6I7lQLf5utNRkdqPA17Q_B3zv0qlnCLbJhxyPXTOtaI8iaZvhU68" />
                 </div>
-                <div class="p-lg flex-grow">
-                    <div class="flex items-center gap-sm mb-sm text-xs">
-                        <span class="font-label-bold text-orange-600">3. KVĚTEN 2025</span>
-                        <span class="text-neutral-400">LUCIE MARKOVÁ</span>
-                    </div>
-                    <h2
-                        class="font-headline-md text-headline-md text-white mb-sm uppercase group-hover:text-orange-500 transition-colors">
-                        NEJLEPŠÍ CVIKY NA ZÁDA</h2>
-                    <p class="text-body-md font-body-md text-secondary mb-lg line-clamp-3">
-                        Široká záda jsou symbolem síly. Přinášíme výběr nejefektivnějších cviků, které nesmí chybět ve
-                        vašem tréninkovém plánu pro dosažení V-tvaru.
-                    </p>
-                    <a class="inline-flex items-center gap-sm font-button-text text-white group/btn mt-auto" href="kontakt.html">
-                        <span>ČÍST VÍCE</span>
-                        <span class="material-symbols-outlined text-orange-600">arrow_forward</span>
-                    </a>
+                <div class="flex gap-4 mb-4">
+                    <span class="font-label-bold text-xs uppercase text-secondary">Vybavení</span>
+                    <span class="font-label-bold text-xs uppercase opacity-40">10. Května 2024</span>
                 </div>
-            </article>
-            
-            <article
-                class="md:col-span-6 grid grid-cols-1 sm:grid-cols-2 group bg-surface-container border border-neutral-800 hover:border-orange-600 transition-all">
-                <div class="overflow-hidden h-full">
-                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80"
-                        data-alt="A top-down aesthetic shot of a professional athlete's meal prep container featuring grilled steak, broccoli, and sweet potatoes. The lighting is clean and sharp, set against a dark textured slate background. Electric orange kitchen tools or accents are subtly placed to reinforce the GymPro brand identity, creating a high-performance nutritional atmosphere."
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtCthqex7o8yDyVYYeGmcnEbLg6W7pY62TuFeT-OquX_C-4_foxxa6J2yp5NJfPEbJ9IEkrTdZr9KUyXoG1pLps_kBu-3ICHNKEtBRWqDy7LX9c2mDgQ_ZyEfYlXAWocIk3ZkQav2Qu2ARKqi7o83dehQpRS-IHUcPaf8pbNFxLhEkYbepvzyGH4mrd2uilFrwOkriqSHLBUZh3t9ilTwEmAwQNdjxnclY1c0yFPUofQTo5sv1C5QXqkYGB0oNleszsRrlkb2QzMe1" />
-                </div>
-                <div class="p-lg">
-                    <div class="flex items-center gap-sm mb-sm text-xs">
-                        <span class="font-label-bold text-orange-600">25. DUBEN 2025</span>
-                    </div>
-                    <h2
-                        class="font-headline-md text-headline-md text-white mb-sm uppercase group-hover:text-orange-500 transition-colors">
-                        SPRÁVNÁ VÝŽIVA PRO RŮST SVALŮ</h2>
-                    <p class="text-body-md font-body-md text-secondary mb-lg line-clamp-3">
-                        Bez paliva motor nepojede. Zjistěte, kolik bílkovin skutečně potřebujete a proč jsou sacharidy
-                        vaším nejlepším přítelem v objemu.
-                    </p>
-                    <a class="inline-flex items-center gap-sm font-button-text text-white" href="kontakt.html">
-                        <span>ČÍST VÍCE</span>
-                        <span class="material-symbols-outlined text-orange-600">arrow_forward</span>
-                    </a>
-                </div>
-            </article>
-            
-            <article
-                class="md:col-span-6 grid grid-cols-1 sm:grid-cols-2 group bg-surface-container border border-neutral-800 hover:border-orange-600 transition-all">
-                <div class="p-lg flex flex-col justify-center order-2 sm:order-1">
-                    <div class="flex items-center gap-sm mb-sm text-xs">
-                        <span class="font-label-bold text-orange-600">15. DUBEN 2025</span>
-                    </div>
-                    <h2
-                        class="font-headline-md text-headline-md text-white mb-sm uppercase group-hover:text-orange-500 transition-colors">
-                        JAK SESTAVIT TRÉNINKOVÝ PLÁN</h2>
-                    <p class="text-body-md font-body-md text-secondary mb-lg line-clamp-3">
-                        Individualizace je klíčem k úspěchu. Naučte se principy periodizace a intenzity, které posunou
-                        vaše tréninky na zcela novou úroveň.
-                    </p>
-                    <a class="inline-flex items-center gap-sm font-button-text text-white" href="kontakt.html">
-                        <span>ČÍST VÍCE</span>
-                        <span class="material-symbols-outlined text-orange-600">arrow_forward</span>
-                    </a>
-                </div>
-                <div class="overflow-hidden h-full order-1 sm:order-2">
-                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80"
-                        data-alt="A professional trainer writing on a whiteboard in a dark gym environment. The board is filled with complex training metrics and periodization schedules. Strong side-lighting creates dramatic shadows, while the GymPro electric orange logo is visible in the corner. The image represents the analytical and scientific approach to professional fitness."
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaaeQE0vfWMDyxF3pzh54l0zoMcW8yWRaIyy1wSq5pqAJ_to8pIsKv1xiHaCxor7PKCvAowBXr1pQepZSJc0HF1w_nb_zX0mk30EWgSNDEB2_FptQtbg45BV-FPIXUjvyeh9_Vtm_zUY-tWqAenWSpF6KMSJ0z0RJE2SsFB1nK2-1eZIZZ-_BEgkbIaJ3pYkEYMBpZUdQnFsEgTBRwNzshY36gXa1HN1HxepaXV1iI8Ux8snpQ_wYXGqRATwi5J_BYpjBISFuRl5RL" />
-                </div>
+                <h2 class="font-headline-md uppercase mb-4 group-hover:text-secondary transition-colors">Představení nové řady Shadow V2</h2>
+                <p class="text-on-surface-variant line-clamp-3">Nová generace rukavic Shadow V2 přináší revoluční materiály a vylepšenou ergonomii. Zjistěte, co všechno se změnilo v konstrukci.</p>
             </article>
         </div>
     </main>
-    
-    <section class="bg-surface-container-low py-xxl border-t border-neutral-800">
-        <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
-            <div>
-                <h2 class="font-display-xl text-headline-lg uppercase text-white mb-sm">NECHTE SI POSÍLAT TIPY</h2>
-                <p class="text-body-lg text-secondary">Přihlaste se k odběru novinek a získejte exkluzivní tréninkové
-                    tipy přímo do vašeho e-mailu.</p>
+
+    <footer class="bg-primary border-t-4 text-white border-secondary text-on-primary">
+        <div class="flex flex-col md:flex-row justify-between items-start px-gutter py-section-padding-desktop w-full max-w-container-max mx-auto">
+            <div class="mb-10 md:mb-0">
+                <span class="font-display-lg text-headline-md text-on-primary block mb-4 uppercase">APEX BOXING</span>
+                <p class="max-w-xs opacity-60 font-body-md text-body-md">
+                    APEX BOXING EQUIPMENT. ENGINEERED FOR POWER. Špičkové vybavení pro bojovníky, kteří nehledají kompromisy.
+                </p>
             </div>
-            <div class="flex flex-col sm:flex-row gap-xs">
-                <input
-                    class="flex-grow bg-surface border-0 border-b-2 border-neutral-700 focus:ring-0 focus:border-orange-600 text-white font-headline-md uppercase px-4 py-3 placeholder:text-neutral-600"
-                    placeholder="VÁŠ EMAIL" type="email" />
-                <button
-                    class="industrial-skew bg-primary-container px-10 py-4 scale-95 active:scale-90 transition-transform">
-                    <span
-                        class="industrial-skew-reverse inline-block font-button-text text-on-primary-container uppercase">ODEBRAT</span>
-                </button>
-            </div>
-        </div>
-    </section>
-        <footer class="bg-neutral-950 w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-8 border-t-2 border-neutral-900">
-        <div class="flex flex-col items-center md:items-start gap-4">
-            <div class="text-xl font-black text-white font-space-grotesk uppercase">GYMPRO</div>
-            <p class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 max-w-xs text-center md:text-left">© 2024 GYMPRO. RAW INTENSITY. ALL RIGHTS RESERVED.</p>
-        </div>
-        <div class="flex flex-wrap justify-center gap-8">
-            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="index.html">Home</a>
-            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="onas.html">O nás</a>
-            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="sluzby.html">Služby</a>
-            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="cenik.html">Ceník</a>
-            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="lektori.html">Lektoři</a>
-            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="galerie.html">Galerie</a>
-            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="blog.html">Blog</a>
-            <a class="font-space-grotesk text-sm uppercase tracking-widest text-neutral-500 hover:text-white transition-colors" href="kontakt.html">Kontakt</a>
-        </div>
-        <div class="flex flex-col items-center md:items-end gap-2">
-            <div class="flex gap-4">
-                <a href="obchodni-podminky.html" class="text-xs uppercase text-neutral-600 hover:text-white">Obchodní podmínky</a>
-                <a href="ochrana-udaju.html" class="text-xs uppercase text-neutral-600 hover:text-white">Ochrana údajů</a>
-            </div>
-            <div class="flex gap-4">
-                <div class="w-10 h-10 border border-neutral-800 flex items-center justify-center hover:bg-orange-600 transition-all group cursor-pointer">
-                    <span class="material-symbols-outlined text-neutral-500 group-hover:text-white">share</span>
+            <div class="grid grid-cols-2 md:grid-cols-2 gap-16">
+                <div>
+                    <h5 class="font-label-bold text-label-bold uppercase text-secondary mb-6">Informace</h5>
+                    <ul class="space-y-4">
+                        <li><a class="text-on-primary opacity-70 hover:opacity-100 transition-opacity font-label-bold text-label-bold uppercase" href="ochrana-udaju.html">Privacy Policy</a></li>
+                        <li><a class="text-on-primary opacity-70 hover:opacity-100 transition-opacity font-label-bold text-label-bold uppercase" href="faq.html">Shipping &amp; Returns</a></li>
+                        <li><a class="text-on-primary opacity-70 hover:opacity-100 transition-opacity font-label-bold text-label-bold uppercase" href="obchodni-podminky.html">Terms of Service</a></li>
+                        <li><a class="text-on-primary opacity-70 hover:opacity-100 transition-opacity font-label-bold text-label-bold uppercase" href="faq.html">Size Guide</a></li>
+                    </ul>
                 </div>
-                <div class="w-10 h-10 border border-neutral-800 flex items-center justify-center hover:bg-orange-600 transition-all group cursor-pointer">
-                    <span class="material-symbols-outlined text-neutral-500 group-hover:text-white">mail</span>
+                <div>
+                    <h5 class="font-label-bold text-label-bold uppercase text-secondary mb-6">Kontakt</h5>
+                    <p class="opacity-70 font-body-md text-body-md mb-2">info@apexboxing.cz</p>
+                    <p class="opacity-70 font-body-md text-body-md">+420 777 888 999</p>
+                    <div class="flex gap-4 mt-6">
+                        <a class="hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+                        <a class="hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+                    </div>
                 </div>
+            </div>
+        </div>
+        <div class="max-w-container-max mx-auto px-gutter py-8 border-t border-white/10 flex justify-between items-center text-caption opacity-40 uppercase tracking-widest">
+            <p>© 2024 APEX BOXING EQUIPMENT. ENGINEERED FOR POWER.</p>
+            <div class="flex gap-4">
+                <span>VISA</span>
+                <span>MASTERCARD</span>
+                <span>APPLE PAY</span>
             </div>
         </div>
     </footer>
 </body>
-
 </html>
-
