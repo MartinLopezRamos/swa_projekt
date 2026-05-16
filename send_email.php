@@ -1,52 +1,37 @@
 <?php
 
 
+function loadEnv($path) {
+    if (!file_exists($path)) return;
+    $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        if (strpos(trim($line), '#') === 0) continue;
+        list($name, $value) = explode('=', $line, 2);
+        $_ENV[trim($name)] = trim($value);
+        putenv(trim($name) . "=" . trim($value));
+    }
+}
+loadEnv(__DIR__ . '/.env');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-
     $name = strip_tags(trim($_POST["name"]));
-
-
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-
-
     $subject_form = strip_tags(trim($_POST["subject"]));
-
-
     $message_form = strip_tags(trim($_POST["message"]));
 
-
-
-
-
     if (empty($name) || !filter_var($email, FILTER_VALIDATE_EMAIL) || empty($message_form)) {
-
-
         header("Location: kontakt.html?error=invalid_input");
-
-
         exit;
-
-
     }
 
-
-
-
-
-    $apiKey = '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';
-
-
+    $apiKey = getenv('BREVO_API_KEY');
+    $adminEmail = getenv('ADMIN_EMAIL');
     $url = 'https://api.brevo.com/v3/smtp/email';
 
-
-
-
-
     $data = array(
-        "sender" => array("name" => "Apex Boxing Web", "email" => "sluzhor.tablet@gmail.com"),
+        "sender" => array("name" => "Apex Boxing Web", "email" => $adminEmail),
         "to" => array(
-            array("email" => "sluzhor.tablet@gmail.com", "name" => "Apex Boxing Admin")
+            array("email" => $adminEmail, "name" => "Apex Boxing Admin")
         ),
 
 
