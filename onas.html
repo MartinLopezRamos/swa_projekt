@@ -71,9 +71,30 @@
                 </div>
             </div>
             <div class="flex items-center gap-4">
-                <!-- Search bar removed -->
+                <button id="mobile-menu-btn" class="flex md:hidden text-primary hover:text-secondary transition-colors focus:outline-none" aria-label="Menu">
+                    <span class="material-symbols-outlined text-[32px]">menu</span>
+                </button>
             </div>
         </nav>
+        <div id="mobile-dropdown" class="hidden md:hidden border-t border-primary bg-surface w-full px-gutter py-6 flex flex-col gap-4">
+            <a class="font-label-bold text-label-bold text-primary hover:text-secondary transition-colors pl-4" href="index.html">Domů</a>
+            <a class="font-label-bold text-label-bold text-primary hover:text-secondary transition-colors pl-4" href="sluzby.html">Produkty</a>
+            <a class="font-label-bold text-label-bold text-primary hover:text-secondary transition-colors pl-4" href="cenik.html">Ceník</a>
+            <a class="font-label-bold text-label-bold text-primary hover:text-secondary transition-colors pl-4" href="galerie.html">Galerie</a>
+            <a class="font-label-bold text-label-bold text-secondary border-l-4 border-secondary pl-3" href="onas.html">O nás</a>
+            <a class="font-label-bold text-label-bold text-primary hover:text-secondary transition-colors pl-4" href="kariera.html">Kariéra</a>
+            <a class="font-label-bold text-label-bold text-primary hover:text-secondary transition-colors pl-4" href="faq.html">FAQ</a>
+            <a class="font-label-bold text-label-bold text-primary hover:text-secondary transition-colors pl-4" href="blog.html">Blog</a>
+            <a class="font-label-bold text-label-bold text-primary hover:text-secondary transition-colors pl-4" href="kontakt.html">Kontakt</a>
+        </div>
+        <script>
+            document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+                const dropdown = document.getElementById('mobile-dropdown');
+                const icon = document.querySelector('#mobile-menu-btn span');
+                dropdown.classList.toggle('hidden');
+                icon.textContent = dropdown.classList.contains('hidden') ? 'menu' : 'close';
+            });
+        </script>
     </header>
 
     <main class="max-w-container-max mx-auto px-gutter py-20">
