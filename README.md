@@ -37,5 +37,9 @@ Web využívá jednotnou barevnou paletu:
 
 Projekt nevyžaduje žádnou složitou instalaci. Stačí otevřít libovolný `.html` soubor v prohlížeči. Veškeré knihovny (Tailwind, Fonty) jsou načítány z CDN.
 
+## Odkaz
+https://sw.opent2.com/sste/it2a/studenti/martinlopezramos/rocnikovy_projekt/
+
 ---
 *Vytvořeno pro projekt SWA - Martin Lopez Ramos*
+
